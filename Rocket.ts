@@ -19,15 +19,7 @@ export class Rocket {
     }
 
     currentMassKg(): number {
-        let astro: number = 0;
-        for (let i=0; i<this.astronauts.length; i++) {
-         astro += this.sumMass(this.astronauts[i][0].massKg);
-        }
-        let cargo: number = 0;
-        for (let y=0; y<this.cargoItems.length; y++) {
-            cargo += this.sumMass(this.cargoItems[y][0].massKg);
-        }
-        return astro + cargo;
+        return this.sumMass(this.cargoItems)+this.sumMass(this.astronauts);
     }
 
     canAdd(item: Payload): boolean {
